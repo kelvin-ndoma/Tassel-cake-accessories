@@ -1,36 +1,37 @@
-// Function to initialize Swiper without autoplay
-function initializeSwiper(selector, slidesPerView) {
-  return new Swiper(selector, {
-      spaceBetween: 30,
-      loop: true,
-      centeredSlides: true,
-      autoplay: false,  // Disable autoplay
-      pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-      },
-      breakpoints: {
-          0: {
-              slidesPerView: 1,
-          },
-          768: {
-              slidesPerView: slidesPerView,
-          },
-          1024: {
-              slidesPerView: slidesPerView,
-          },
-      },
-  });
+let currentCard = 1;
+showCard(currentCard);
+
+function showCard(cardNumber) {
+    const cards = document.querySelectorAll('.card');
+    if (cardNumber > cards.length) {
+        currentCard = 1;
+    }
+    if (cardNumber < 1) {
+        currentCard = cards.length;
+    }
+    cards.forEach(card => card.style.display = 'none');
+    cards[currentCard - 1].style.display = 'block';
 }
 
-// Initialize Swiper for product-row
-var productSwiper = initializeSwiper(".product-row", 3);
+function prevCard() {
+    showCard(currentCard -= 1);
+}
 
-// Initialize Swiper for blogs-row
-var blogsSwiper = initializeSwiper(".blogs-row", 1);
+function nextCard() {
+    showCard(currentCard += 1);
+}
 
-// Initialize Swiper for review-row
-var reviewSwiper = initializeSwiper(".review-row", 3);
+document.addEventListener('DOMContentLoaded', function () {
+  var mySwiper = new Swiper('.swiper', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      speed: 800,
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+      },
+  });
+});
 
 // Your existing code for navbar toggle
 let navbar = document.querySelector('.navbar');
