@@ -44,3 +44,12 @@ let search = document.querySelector('.search');
 document.querySelector('#search').onclick = () => {
   search.classList.toggle('active');
 };
+
+// Close navbar when a menu item is clicked
+let menuItems = document.querySelectorAll('.navbar a');
+menuItems.forEach((menuItem) => {
+  menuItem.addEventListener('click', () => {
+    navbar.classList.remove('active');
+  });
+});
+

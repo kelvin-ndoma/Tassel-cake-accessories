@@ -72,7 +72,11 @@ html::-webkit-scrollbar-thumb {
     color: var(--black);
     font-weight: bold;
 }
-
+.navbar {
+    /* Other styles */
+    transition: transform 0.3s ease; /* Adjust the duration and timing function as needed */
+  }
+  
 .header .navbar a:hover {
     border-bottom: .1rem solid var(--black);
     padding-bottom: .4rem;
@@ -564,7 +568,9 @@ section {
     .header {
         padding: 1.3rem 3rem;
     }
-
+    .navbar.active {
+        transform: translateX(0); /* Assuming you want to slide it horizontally */
+      }
     .home .homeContent {
         margin-left: 0;
         width: 80%;
