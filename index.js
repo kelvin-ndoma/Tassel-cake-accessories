@@ -35,13 +35,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Your existing code for navbar toggle
 let navbar = document.querySelector('.navbar');
-document.querySelector('#menu-bar').onclick = () => {
+let menuBarIcon = document.getElementById('menu-bar');
+
+menuBarIcon.onclick = () => {
   navbar.classList.toggle('active');
+  // Toggle Font Awesome icon between bars and X
+  menuBarIcon.classList.toggle('fa-bars');
+  menuBarIcon.classList.toggle('fa-times');
 };
 
 // Your existing code for search toggle
 let search = document.querySelector('.search');
-document.querySelector('#search').onclick = () => {
+let searchIcon = document.querySelector('#search');
+
+searchIcon.onclick = () => {
   search.classList.toggle('active');
 };
 
@@ -50,6 +57,10 @@ let menuItems = document.querySelectorAll('.navbar a');
 menuItems.forEach((menuItem) => {
   menuItem.addEventListener('click', () => {
     navbar.classList.remove('active');
+    // Reset Font Awesome icon to bars when a menu item is clicked
+    menuBarIcon.classList.remove('fa-times');
+    menuBarIcon.classList.add('fa-bars');
   });
 });
+
 
