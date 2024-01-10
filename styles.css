@@ -42,7 +42,7 @@ html::-webkit-scrollbar-thumb {
     top: 0;
     right: 0;
     left: 0;
-    background-color: var(--white);
+    background-color: violet;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -162,6 +162,7 @@ html::-webkit-scrollbar-thumb {
     font-size: 1.8rem;
     line-height: 2;
     margin-bottom: 2rem;
+    color: var(--black);
 }
 
 .home .homeContent .home-btn {
@@ -237,6 +238,7 @@ p {
     color: #666;
     font-size: 16px;
     line-height: 1.5;
+    text-align: center;
 }
 
 .orderNow a {
@@ -554,7 +556,7 @@ button:hover {
         top: 100%;
         right: -100%;
         width: 25rem;
-        background-color: #510b63;
+        background-color: var(--white);
         height: 80vh;
     }
 
